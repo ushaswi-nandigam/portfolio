@@ -1,0 +1,422 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Muted Neubrutalist Palette */
+    --cream: #FAF8F5;
+    --charcoal: #2D2D2D;
+    --terracotta: #C4654A;
+    --olive: #5A7A5A;
+    --sand: #E5DDD0;
+    --mustard: #D4A843;
+    --rust: #8B5A3C;
+    --pale-green: #A8C4A8;
+    --electric-blue: #5A7BA8;
+    --hot-pink: #C47A8A;
+
+    /* Functional colors */
+    --background: var(--cream);
+    --foreground: var(--charcoal);
+    --accent: var(--terracotta);
+    --secondary: var(--olive);
+
+    /* Brutalist Borders & Shadows */
+    --border-width: 4px;
+    --border-thick: 5px;
+    --shadow-offset: 8px;
+    --shadow-offset-lg: 12px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 80%;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+
+  /* Neubrutalist Utilities */
+  .neo-border {
+    border: var(--border-width) solid var(--charcoal);
+  }
+
+  .neo-border-thick {
+    border: var(--border-thick) solid var(--charcoal);
+  }
+
+  .neo-shadow {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--charcoal);
+  }
+
+  .neo-shadow-lg {
+    box-shadow: var(--shadow-offset-lg) var(--shadow-offset-lg) 0 var(--charcoal);
+  }
+
+  .neo-shadow-terracotta {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--terracotta);
+  }
+
+  .neo-shadow-olive {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--olive);
+  }
+
+  /* Brutalist Button - Bolder & More Playful */
+  .neo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.125rem 2.25rem;
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: var(--border-thick) solid var(--charcoal);
+    background: var(--terracotta);
+    color: var(--cream);
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--charcoal);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neo-btn:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: calc(var(--shadow-offset) + 4px) calc(var(--shadow-offset) + 4px) 0 var(--charcoal);
+  }
+
+  .neo-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--charcoal);
+  }
+
+  .neo-btn-secondary {
+    background: var(--sand);
+    color: var(--charcoal);
+  }
+
+  .neo-btn-olive {
+    background: var(--olive);
+    color: var(--cream);
+  }
+
+  .neo-btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+  }
+
+  .neo-btn-outline:hover {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+
+  /* Brutalist Card - More Dramatic */
+  .neo-card {
+    background: var(--cream);
+    border: var(--border-thick) solid var(--charcoal);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--charcoal);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+  }
+
+  .neo-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: calc(var(--shadow-offset) + 5px) calc(var(--shadow-offset) + 5px) 0 var(--charcoal);
+  }
+
+  /* Brutalist Tag/Chip - More Punchy */
+  .neo-tag {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    font-family: var(--font-space-mono), 'Space Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 3px solid var(--charcoal);
+    background: var(--mustard);
+    color: var(--charcoal);
+    box-shadow: 3px 3px 0 var(--charcoal);
+  }
+
+  .neo-tag-terracotta {
+    background: var(--terracotta);
+    color: var(--cream);
+  }
+
+  .neo-tag-olive {
+    background: var(--olive);
+    color: var(--cream);
+  }
+
+  .neo-tag-mustard {
+    background: var(--mustard);
+    color: var(--charcoal);
+  }
+
+  .neo-tag-sand {
+    background: var(--sand);
+    color: var(--charcoal);
+  }
+
+  /* Brutalist Input - Bolder */
+  .neo-input {
+    width: 100%;
+    padding: 1.125rem 1.25rem;
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    border: var(--border-thick) solid var(--charcoal);
+    background: white;
+    outline: none;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+  }
+
+  .neo-input:focus {
+    box-shadow: 6px 6px 0 var(--charcoal);
+    transform: translate(-2px, -2px);
+  }
+
+  .neo-input::placeholder {
+    color: #999;
+    font-weight: 400;
+  }
+
+  /* Typography - Bolder & More Expressive */
+  .font-cursive {
+    font-family: var(--font-cursive), cursive;
+  }
+
+  .heading-display {
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .heading-section {
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 8px;
+    background: var(--terracotta);
+  }
+
+  /* Container */
+  .container-neo {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    padding: 7rem 0;
+  }
+
+  /* Decorative Elements */
+  .neo-marker {
+    position: relative;
+    display: inline;
+    background: linear-gradient(180deg, transparent 50%, var(--mustard) 50%);
+    padding: 0 0.25rem;
+  }
+
+  .neo-sticker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background: var(--mustard);
+    border: 4px solid var(--charcoal);
+    box-shadow: 5px 5px 0 var(--charcoal);
+    transform: rotate(-2deg);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--cream);
+    border-left: 4px solid var(--charcoal);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--charcoal);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--terracotta);
+  }
+
+  /* Selection */
+  ::selection {
+    background: var(--terracotta);
+    color: var(--cream);
+  }
+
+  /* Border utilities */
+  .border-3 {
+    border-width: 3px;
+  }
+
+  .border-4 {
+    border-width: 4px;
+  }
+
+  .border-5 {
+    border-width: 5px;
+  }
+
+  /* Custom bg colors for dynamic content */
+  .img-secure {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
+  }
+
+  .bg-terracotta {
+    background-color: var(--terracotta);
+  }
+
+  .bg-olive {
+    background-color: var(--olive);
+  }
+
+  .bg-sand {
+    background-color: var(--sand);
+  }
+
+  .bg-mustard {
+    background-color: var(--mustard);
+  }
+
+  .bg-cream {
+    background-color: var(--cream);
+  }
+
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+
+  .bg-pale-green {
+    background-color: var(--pale-green);
+  }
+
+  .bg-electric-blue {
+    background-color: var(--electric-blue);
+  }
+
+  .bg-hot-pink {
+    background-color: var(--hot-pink);
+  }
+
+  .text-terracotta {
+    color: var(--terracotta);
+  }
+
+  .text-olive {
+    color: var(--olive);
+  }
+
+  .text-cream {
+    color: var(--cream);
+  }
+
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+
+  .text-mustard {
+    color: var(--mustard);
+  }
+
+  .text-electric-blue {
+    color: var(--electric-blue);
+  }
+
+  .text-hot-pink {
+    color: var(--hot-pink);
+  }
+
+  .border-terracotta {
+    border-color: var(--terracotta);
+  }
+
+  .border-olive {
+    border-color: var(--olive);
+  }
+
+  .border-charcoal {
+    border-color: var(--charcoal);
+  }
+
+  .border-cream {
+    border-color: var(--cream);
+  }
+
+  .border-mustard {
+    border-color: var(--mustard);
+  }
+
+    .font-code {
+      font-family: var(--font-code), monospace;
+    }
+
+    .font-jetbrains {
+      font-family: var(--font-jetbrains), monospace;
+    }
+
+
+  /* Rotation utilities */
+  .rotate-neg-2 {
+    transform: rotate(-2deg);
+  }
+
+  .rotate-neg-3 {
+    transform: rotate(-3deg);
+  }
+
+  .rotate-2 {
+    transform: rotate(2deg);
+  }
+
+  .rotate-3 {
+    transform: rotate(3deg);
+  }
+}
