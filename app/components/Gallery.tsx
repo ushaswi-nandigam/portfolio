@@ -12,7 +12,6 @@ const photos = [
     { id: 8, title: 'Golden Hour', src: '/images/photography/Door.JPG' },
     { id: 9, title: 'Wander', src: '/images/photography/boy.jpg' },
     { id: 3, title: "Artisan's Touch", src: '/images/photography/Pottery.jpg' },
-    { id: 10, title: 'Geometric Solitude', src: '/images/photography/building.JPG' },
 ];
 
 export default function Gallery() {
