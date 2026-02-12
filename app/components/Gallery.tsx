@@ -82,7 +82,7 @@ export default function Gallery() {
                     className="mt-14 text-center"
                 >
                     <a 
-                        href="https://www.instagram.com/photolapicchi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                        href="https://www.instagram.com/photolapicchi/?__pwa=1" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="neo-btn neo-btn-secondary inline-flex items-center gap-3"
