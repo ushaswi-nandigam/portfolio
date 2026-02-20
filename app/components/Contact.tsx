@@ -138,7 +138,7 @@ export default function Contact() {
                         </p>
                         <p className="flex items-center gap-2">
                             <span className="w-3 h-3 bg-olive border-2 border-charcoal" />
-                            Designed in Neubrutalist, hehehe I just vibe coded everything😅
+                            Designed in Neubrutalist UI Style
                         </p>
                     </div>
                 </div>
